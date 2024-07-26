@@ -6,6 +6,10 @@ const authController = require("./controllers/authController");
 const appError = require("./middlewares/errorHandling");
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 app.use("/blog/posts", postRouter);
 app.use("/blog/comments", commentRouter);
 app.post("/signup", authController.signup);
