@@ -11,8 +11,8 @@ app.use("/blog/comments", commentRouter);
 app.post("/signup", authController.signup);
 app.post("/login", authController.login);
 
-app.all("*", (req, res) => {
-  return next(new appError(`can't find ${req.originalUrl} in the server`, 404));
-});
+// app.all("*", (req, res) => {
+//   return next(new appError(`can't find ${req.originalUrl} in the server`, 404));
+// });
 
 module.exports = app;
